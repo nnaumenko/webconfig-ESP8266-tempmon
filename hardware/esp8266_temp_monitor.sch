@@ -15662,8 +15662,8 @@ Source: www.kingbright.com</description>
 <part name="R6" library="resistor" deviceset="R-EU_" device="M0805" value="470"/>
 <part name="R7" library="resistor" deviceset="R-EU_" device="M0805" value="470"/>
 <part name="LED1" library="led" deviceset="LED" device="5MM" value="Fault (RED)"/>
-<part name="LED2" library="led" deviceset="LED" device="5MM" value="Prog (AMBER)"/>
-<part name="LED3" library="led" deviceset="LED" device="5MM" value="Run (GREEN)"/>
+<part name="LED2" library="led" deviceset="LED" device="5MM" value="Run (GREEN)"/>
+<part name="LED3" library="led" deviceset="LED" device="5MM" value="Prog (AMBER)"/>
 <part name="R8" library="resistor" deviceset="R-EU_" device="M0805" value="5.1K 1%"/>
 <part name="R9" library="resistor" deviceset="R-EU_" device="M0805" value="1K 1%"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
@@ -16036,14 +16036,14 @@ Source: www.kingbright.com</description>
 <wire x1="17.78" y1="-27.94" x2="17.78" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="LED_PROG" class="0">
+<net name="LED_OPERATE" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="LED2" gate="G$1" pin="A"/>
 <wire x1="33.02" y1="-17.78" x2="33.02" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="LED_RUN" class="0">
+<net name="LED_PROG" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
 <pinref part="LED3" gate="G$1" pin="A"/>
