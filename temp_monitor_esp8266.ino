@@ -48,8 +48,8 @@ const int PIN_SENSOR_MQ2 = A0;    //ADC = MQ2 analog signal
 
 const unsigned long UPDATE_TIME_SENSORS = 2500;//ms
 const unsigned long UPDATE_TIME_STATUS_LEDS = 250;//ms
-const unsigned long UPDATE_TIME_STATUS_VPINS = 499;//ms
-const unsigned long UPDATE_TIME_VALUE_VPINS = 3001;//ms
+const unsigned long UPDATE_TIME_STATUS_VPINS = 5000;//ms
+const unsigned long UPDATE_TIME_VALUE_VPINS = 10000;//ms
 
 /*
  * Data and status values
@@ -245,6 +245,7 @@ void setup() {
     char password[TEXT_SIZE + 1] = {0};
     strncpy_P(password, passwordConfigModePrefix, sizeof(password));
     strncat(password, flashId, sizeof(password) - strlen(password));
+    WiFi.mode(WIFI_AP);
     WiFi.softAP(ssid, password);
     Serial.println(F("Access point created: "));
     Serial.print(F("SSID: "));
@@ -258,6 +259,7 @@ void setup() {
   }
   else {
     Serial.println(F("Config Mode not enabled."));
+    WiFi.mode(WIFI_STA);
     Blynk.begin(authToken, wifiSsid, wifiPassword);
     Serial.println(F("Blynk init completed."));
   }

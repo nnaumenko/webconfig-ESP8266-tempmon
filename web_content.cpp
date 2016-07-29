@@ -54,7 +54,7 @@ const char PROGMEM webServerWifiFormInputEnd[] =
   "\"></td></tr>\r\n";
 
 const char PROGMEM webServerWifiFormEnd[] =
-  "<table><br>\r\n"
+  "</table><br>\r\n"
   "<input type=\"submit\" value=\"Save settings\">\r\n"
   "</form></div>\r\n";
 

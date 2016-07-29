@@ -179,14 +179,14 @@ void webServerRun(void) {
     requestUriPath = requestURI.substring(0, requestPathQuerySeparatorPos);
     requestUriQuery = requestURI.substring(requestPathQuerySeparatorPos + 1);
   }
-  Serial.print("URI Path:");
+  Serial.print(F("URI Path:"));
   Serial.println(requestUriPath);
-  Serial.print("URI Query:");
+  Serial.print(F("URI Query:"));
   Serial.println(requestUriQuery);
   //Check method (only GET is accepted)
   String methodGet = "GET";
   if (requestMethod != methodGet) {
-    Serial.println("Response: 405");
+    Serial.println(F("Response: 405"));
     webServerPrintProgmem(client, httpStatusCode405);
     return;
   }
@@ -194,7 +194,7 @@ void webServerRun(void) {
   //Check URI (only / is accepted)
   String webServerURIroot = "/";
   if (requestUriPath != webServerURIroot) {
-    Serial.println("Response: 404");
+    Serial.println(F("Response: 404"));
     webServerPrintProgmem(client, httpStatusCode404);
     return;
   }
@@ -203,7 +203,7 @@ void webServerRun(void) {
   if (requestUriQuery != "") parseQuery (requestUriQuery);
 
   //Send the config webpage
-  Serial.println("Response: 200");
+  Serial.println(F("Response: 200"));
   Serial.print(F("["));
   Serial.print(millis());
   Serial.println(F("] Sending config webpage."));

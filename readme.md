@@ -8,7 +8,7 @@ If the wireless network parameters are hardcoded into the project, connecting th
 
 This prototype project implements simple web-server for the configuration purposes. During the initial setup user holds Config Button and powers the device on (or alternatively resets the device with Reset Button). In this case device sets up a wireless access point with known SSID and password. User connects to this access point, configures and saves the network settings using web browser. 
 
-After setup is complete, the device is powered off-then-on (or reset with Reset Button) with Config Button released. Device connect to configured wireless network and operates routinely.
+After setup is complete, the device is powered off-then-on (or reset with Reset Button) with Config Button released. Device connects to configured wireless network and operates routinely.
 
 ## Highlights
 
@@ -19,7 +19,19 @@ After setup is complete, the device is powered off-then-on (or reset with Reset 
 * Project uses Arduino IDE for ESP8266 programming, can be adapted for Arduino & WiFi Shield with minimum effort
 * AM2302 temperature/humidity sensor (e.g. for room temperature)
 * DS18B20 temperature sensor (e.g. for outside temperature)
-* MQ2 gas leak detection sensor; no calibration is possible at the moment, raw data from analog input are displayed
+* MQ2 gas leak detection sensor; no calibration is possible, raw data from analog input is displayed
+
+## Project status
+
+There are no plans to update this project unless a stability issue is discovered.
+
+Devices are in use since end of December 2015 with no problem, they were stopped only once in May 2016 when Blynk Cloud moved to different servers, and the firmware has to be recompiled using latest Blynk libraries and reuploaded to device. The stable operation of the devices is a priority over code improvement and new features.
+
+I would recommend [my new project](https://github.com/nnaumenko/room_monitor_esp8266/) instead. It started as a fork from this project and is being updated with new features introduced.
+
+## Quick start
+
+Download this [binary file](https://github.com/nnaumenko/webconfig-ESP8266-tempmon/raw/master/binary/temp_monitor_esp8266.bin) and upload it into ESP8266.
 
 ## Setting up Blynk
 
@@ -32,7 +44,7 @@ Note: this device uses [Blynk]( http://www.blynk.cc/) for data viewing & archivi
 
 ## Setting up the device
 
-Note: this device uses [Blynk]( http://www.blynk.cc/) for data viewing & archiving. Alternatively the sensor data and debug information can be reviewed with the serial port monitor.
+Note: this device uses [Blynk](http://www.blynk.cc/) for data viewing & archiving. Alternatively the sensor data and debug information can be reviewed with the serial port monitor.
 
 * Connect the sensors/buttons/resistors/etc. to ESP-12 according to the included wiring diagram
 * [Install ESP8266 extension](https://github.com/esp8266/Arduino#installing-with-boards-manager) for Arduino IDE
@@ -43,6 +55,15 @@ Note: this device uses [Blynk]( http://www.blynk.cc/) for data viewing & archivi
 * Enter SSID, password and [Blynk auth token](http://docs.blynk.cc/#getting-started-getting-started-with-the-blynk-app-4-auth-token) in web interface form and press Save Settings button. 
 * Restart the device and wait for connection with Blynk server to establish (green LED lights)
 * [Run the Blynk project](http://docs.blynk.cc/#getting-started-getting-started-with-the-blynk-app-6-run-the-project)
+
+##External Arduino Libraries
+
+This project uses the following Arduino libraries:
+
+* [OneWire library for Dallas/Maxim 1-Wire Chips](https://github.com/PaulStoffregen/OneWire)
+* [Arduino plug and go library for the Maxim (previously Dallas) DS18B20 (and similar) temperature ICs] (https://github.com/milesburton/Arduino-Temperature-Control-Library)
+* [Arduino library for DHT11DHT22, etc Temp & Humidity Sensors] (https://github.com/adafruit/DHT-sensor-library)
+* [Blynk library for embedded hardware](https://github.com/blynkkk/blynk-library/releases/)
 
 ## Copyright and License
 
