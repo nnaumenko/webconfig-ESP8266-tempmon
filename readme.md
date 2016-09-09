@@ -27,7 +27,7 @@ There are no plans to update this project unless a stability issue is discovered
 
 Devices are in use since end of December 2015 with no problem, they were stopped only once in May 2016 when Blynk Cloud moved to different servers, and the firmware has to be recompiled using latest Blynk libraries and reuploaded to device. The stable operation of the devices is a priority over code improvement and new features.
 
-I would recommend [my new project](https://github.com/nnaumenko/room_monitor_esp8266/) instead. It started as a fork from this project and is being updated with new features introduced.
+I would recommend [my new project](https://github.com/nnaumenko/iot_ambit/) instead. It started as a fork from this project and is being updated with new features introduced.
 
 ## Quick start
 
